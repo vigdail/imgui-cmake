@@ -26,7 +26,7 @@ if (IMGUI_WITH_BACKEND)
 #list (APPEND INTERFACE_LIBS ${OPENGL_LIBRARIES}
         list(APPEND INTERFACE_LIBS  glfw)
         if (IMGUI_GLFW_INCLUDE_PATH)
-        target_include_directories(imgui ${IMGUI_GLFW_INCLUDE_PATH})
+        target_include_directories(imgui PUBLIC ${IMGUI_GLFW_INCLUDE_PATH})
         else()
             message(FATAL_ERROR "IMGUI_GLFW_INCLUDE_PATH not specified")
             endif()
