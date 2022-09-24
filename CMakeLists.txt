@@ -25,10 +25,10 @@ if (IMGUI_WITH_BACKEND)
 #        find_package(OpenGL REQUIRED)
 #list (APPEND INTERFACE_LIBS ${OPENGL_LIBRARIES}
         list(APPEND INTERFACE_LIBS  glfw)
-        if (IMGUI_GLFW_INCLUDE_DIR)
-        target_include_directories(imgui ${IMGUI_GLFW_INCLUDE_DIR})
+        if (IMGUI_GLFW_INCLUDE_PATH)
+        target_include_directories(imgui ${IMGUI_GLFW_INCLUDE_PATH})
         else()
-            message(FATAL_ERROR IMGUI_GLFW_INCLUDE_PATH not specified)
+            message(FATAL_ERROR "IMGUI_GLFW_INCLUDE_PATH not specified")
             endif()
         target_sources(imgui
                 PRIVATE
