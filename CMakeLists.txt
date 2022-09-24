@@ -21,6 +21,7 @@ target_sources(imgui
 set(INTERFACE_LIBS)
 if (IMGUI_WITH_BACKEND)
     if (IMGUI_BACKEND_GLFW)
+        message("BUILDING IMGUI WITH GLFW BACKEND")
         find_package(OpenGL REQUIRED)
         list(APPEND INTERFACE_LIBS ${OPENGL_LIBRARIES} glfw)
         target_sources(imgui
