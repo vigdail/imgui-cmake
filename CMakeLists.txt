@@ -22,8 +22,9 @@ set(INTERFACE_LIBS)
 if (IMGUI_WITH_BACKEND)
     if (IMGUI_BACKEND_GLFW)
         message("BUILDING IMGUI WITH GLFW BACKEND")
-        find_package(OpenGL REQUIRED)
-        list(APPEND INTERFACE_LIBS ${OPENGL_LIBRARIES} glfw)
+#        find_package(OpenGL REQUIRED)
+#list (APPEND INTERFACE_LIBS ${OPENGL_LIBRARIES}
+        list(APPEND INTERFACE_LIBS  glfw)
         target_sources(imgui
                 PRIVATE
                 backends/imgui_impl_opengl3.cpp
