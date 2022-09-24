@@ -2,9 +2,9 @@ cmake_minimum_required(VERSION 3.0)
 project(ImGui)
 
 if (IMGUI_SHARED)
-    set(LIB_TYPE STATIC)
-else ()
     set(LIB_TYPE SHARED)
+else ()
+    set(LIB_TYPE STATIC)
 endif ()
 
 add_library(imgui ${LIB_TYPE})
