@@ -22,25 +22,22 @@ set(INTERFACE_LIBS)
 if (IMGUI_WITH_BACKEND)
     if (IMGUI_BACKEND_GLFW)
         message("BUILDING IMGUI WITH GLFW BACKEND")
-#        find_package(OpenGL REQUIRED)
-#list (APPEND INTERFACE_LIBS ${OPENGL_LIBRARIES}
-        list(APPEND INTERFACE_LIBS  glfw)
+        list(APPEND INTERFACE_LIBS glfw)
         if (IMGUI_GLFW_INCLUDE_PATH)
-        target_include_directories(imgui PUBLIC ${IMGUI_GLFW_INCLUDE_PATH})
-        else()
+            target_include_directories(imgui PUBLIC ${IMGUI_GLFW_INCLUDE_PATH})
+        else ()
             message(FATAL_ERROR "IMGUI_GLFW_INCLUDE_PATH not specified")
-            endif()
+        endif ()
         target_sources(imgui
                 PRIVATE
                 backends/imgui_impl_opengl3.cpp
                 backends/imgui_impl_glfw.cpp
                 )
+    else ()
+        message("NO BACKEND SPECIFIED")
     endif ()
-else()
-    message("NO BACKEND SPECIFIED")
 endif ()
 
-set(OpenGL_GL_PREFERENCE GLVND)
 target_include_directories(imgui
         PUBLIC .
         PUBLIC backends
