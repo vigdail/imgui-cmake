@@ -31,7 +31,7 @@ if (IMGUI_WITH_BACKEND)
                 )
     endif ()
 else()
-    message("NO BACKEND SPECIFIED)
+    message("NO BACKEND SPECIFIED')
 endif ()
 
 set(OpenGL_GL_PREFERENCE GLVND)
