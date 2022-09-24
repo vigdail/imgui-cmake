@@ -30,6 +30,8 @@ if (IMGUI_WITH_BACKEND)
                 backends/imgui_impl_glfw.cpp
                 )
     endif ()
+else()
+    message("NO BACKEND SPECIFIED)
 endif ()
 
 set(OpenGL_GL_PREFERENCE GLVND)
